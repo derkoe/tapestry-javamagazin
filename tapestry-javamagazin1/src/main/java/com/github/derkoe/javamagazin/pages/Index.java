@@ -16,13 +16,13 @@ public class Index
     @Inject
     @Symbol(SymbolConstants.TAPESTRY_VERSION)
     private String tapestryVersion;
-
-    @InjectComponent
-    private Zone zone;
-
+    
     @Persist
     @Property
     private int clickCount;
+
+    @InjectComponent
+    private Zone zone;
 
     @Inject
     private AlertManager alertManager;
