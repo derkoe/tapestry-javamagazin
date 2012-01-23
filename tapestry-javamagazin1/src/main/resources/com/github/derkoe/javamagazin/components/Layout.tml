@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>${title}</title>
+	<style type="text/css">
+		body {
+			padding-top: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-fixed">
+		<div class="navbar-inner">
+			<div class="container">
+				<a t:type="pagelink" page="index" class="brand">tapestry-javamagazin1</a>
+				<ul class="nav">
+					<li t:type="loop" source="pageNames" value="pageName" class="prop:classForPageName">
+						<a t:type="pagelink" page="prop:pageName">${pageName}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="hero-unit">
+	        <h1>${title}</h1>
+	        <p>
+	        	<t:body/>
+	        </p>
+		</div>
+
+		<footer>
+			<p>&copy; Christian K&ouml;berl, 2012</p>
+		</footer>
+	</div>
+
+</body>
+</html>
