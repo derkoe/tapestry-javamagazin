@@ -1,7 +1,9 @@
 <html t:type="layout" title="tapestry-javamagazin1 Index"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
-        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+    <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+	<div t:type="alerts"></div>
 
     <p>${message:greeting}</p>
 
@@ -14,13 +16,9 @@
         </p>
 
         <p>
-            [
-            <t:actionlink t:id="increment">increment</t:actionlink>
-            ]
+            [ <a t:type="actionlink" t:id="increment">increment</a> ]
             &nbsp;
-            [
-            <t:actionlink t:id="incrementAjax" zone="^">increment (via Ajax)</t:actionlink>
-            ]
+            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">increment (via Ajax)</a> ]
         </p>
 
     </t:zone>
