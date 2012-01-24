@@ -39,7 +39,8 @@ public class Index
         clickCount++;
     }
 
-    Object onActionFromIncrementAjax()
+    @OnEvent(component = "incrementAjax")
+    Zone incAjax()
     {
         clickCount++;
 
