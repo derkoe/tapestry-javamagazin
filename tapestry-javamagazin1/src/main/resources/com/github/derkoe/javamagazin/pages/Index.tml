@@ -1,4 +1,4 @@
-<html t:type="layout" title="Tapestry javamagazin"
+<html t:type="layout" title="Tapestry javamagazin Teil 1"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
     <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
@@ -34,6 +34,5 @@
 		EventLink mit @Component in der Klasse:
 		<a href="#" t:id="resetCounterLink">Zur&uuml;cksetzen</a>
 	</p>
-
 
 </html>
