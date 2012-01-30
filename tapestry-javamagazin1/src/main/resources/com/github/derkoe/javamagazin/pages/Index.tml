@@ -1,26 +1,39 @@
-<html t:type="layout" title="tapestry-javamagazin1 Index"
+<html t:type="layout" title="Tapestry javamagazin"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
     <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-	<div t:type="alerts"></div>
+	<div t:type="alerts" dismissText="Löschen"></div>
 
     <p>${message:greeting}</p>
 
-    <p>The current time is: <strong>${currentTime}</strong></p>
+    <p>Aktuelle Zeit: <strong>${currentTime}</strong></p>
 
     <!-- A Zone is a component that can be updated in place, triggered by other components. -->
     <t:zone t:id="zone">
         <p>
-            You have clicked the link <strong>${clickCount}</strong> times.
+            Sie haben den Link <strong>${clickCount}</strong> mal geklickt.
         </p>
 
         <p>
-            [ <a t:type="actionlink" t:id="increment">increment</a> ]
+            [ <a t:type="actionlink" t:id="increment">erh&ouml;hen</a> ]
             &nbsp;
-            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">increment (via Ajax)</a> ]
+            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">erh&ouml;hen (mit Ajax)</a> ]
         </p>
-
     </t:zone>
+
+	<p>
+		EventLink mit direkter Verwendung des Komponentennames im Tapestry-Namespace:
+		<t:eventlink event="resetcounter" context="literal:1">Zur&uuml;cksetzen</t:eventlink>
+	</p>
+	<p>
+		EventLink mit Invisible Instrumentation:
+		<a href="#" t:type="EventLink" event="resetcounter" context="literal:1">Zur&uuml;cksetzen</a>
+	</p>
+	<p>
+		EventLink mit @Component in der Klasse:
+		<a href="#" t:id="resetCounterLink">Zur&uuml;cksetzen</a>
+	</p>
+
 
 </html>

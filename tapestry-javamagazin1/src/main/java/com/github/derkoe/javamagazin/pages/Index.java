@@ -12,6 +12,11 @@ import org.apache.tapestry5.alerts.AlertManager;
  */
 public class Index
 {
+    private static final String EVENT_RESET_COUNTER = "resetcounter";
+    
+    @Component(parameters = {"event=" + EVENT_RESET_COUNTER, "context=literal:1"})
+    private EventLink resetCounterLink;
+    
     @Property
     @Inject
     @Symbol(SymbolConstants.TAPESTRY_VERSION)
@@ -34,18 +39,22 @@ public class Index
 
     void onActionFromIncrement()
     {
-        alertManager.info("Increment clicked");
-
-        clickCount++;
+        alertManager.info("Zahl erhöht auf " + (++clickCount));
     }
 
     @OnEvent(component = "incrementAjax")
     Zone incAjax()
     {
-        clickCount++;
-
-        alertManager.info("Increment (via Ajax) clicked");
+        alertManager.info("Zahl erhöht auf " + (++clickCount) + " (mit Ajax)");
 
         return zone;
+    }
+
+    @OnEvent(EVENT_RESET_COUNTER)
+    void setCounter(int value)
+    {
+        alertManager.info("Zahl zurückgesetzt auf " + value);
+        
+        clickCount = value;
     }
 }
