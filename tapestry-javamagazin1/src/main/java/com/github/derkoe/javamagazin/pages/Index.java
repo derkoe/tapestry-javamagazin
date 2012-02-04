@@ -13,15 +13,14 @@ import org.apache.tapestry5.alerts.AlertManager;
 public class Index
 {
     private static final String EVENT_RESET_COUNTER = "resetcounter";
-    
+
     @Component(parameters = {"event=" + EVENT_RESET_COUNTER, "context=literal:1"})
     private EventLink resetCounterLink;
-    
-    @Property
+
     @Inject
     @Symbol(SymbolConstants.TAPESTRY_VERSION)
     private String tapestryVersion;
-    
+
     @Persist
     @Property
     private int clickCount;
@@ -35,6 +34,11 @@ public class Index
     public Date getCurrentTime()
     {
         return new Date();
+    }
+
+    public String getTapestryVersion()
+    {
+        return tapestryVersion;
     }
 
     void onActionFromIncrement()
