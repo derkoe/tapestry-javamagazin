@@ -41,9 +41,11 @@ public class Index
         return tapestryVersion;
     }
 
-    void onActionFromIncrement()
+    Index onActionFromIncrement()
     {
         alertManager.info("Zahl erhöht auf " + (++clickCount));
+
+        return this;
     }
 
     @OnEvent(component = "incrementAjax")
