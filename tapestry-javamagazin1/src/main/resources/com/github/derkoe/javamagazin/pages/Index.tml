@@ -3,7 +3,7 @@
       xmlns:p="tapestry:parameter">
     <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-	<div t:type="alerts" dismissText="Löschen"></div>
+	<div t:type="alerts" dismissText="message:dismiss"></div>
 
     <p>${message:greeting}</p>
 
@@ -16,23 +16,23 @@
         </p>
 
         <p>
-            [ <a t:type="actionlink" t:id="increment">erh&ouml;hen</a> ]
+            [ <a t:type="actionlink" t:id="increment">${message:increase}</a> ]
             &nbsp;
-            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">erh&ouml;hen (mit Ajax)</a> ]
+            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">${message:increase-ajax}</a> ]
         </p>
     </t:zone>
 
 	<p>
 		EventLink mit direkter Verwendung des Komponentennames im Tapestry-Namespace:
-		<t:eventlink event="resetcounter" context="literal:1">Zur&uuml;cksetzen</t:eventlink>
+		<t:eventlink event="resetcounter" context="literal:1">${message:reset}</t:eventlink>
 	</p>
 	<p>
 		EventLink mit Invisible Instrumentation:
-		<a href="#" t:type="EventLink" event="resetcounter" context="literal:1">Zur&uuml;cksetzen</a>
+		<a href="#" t:type="EventLink" event="resetcounter" context="literal:1">${message:reset}</a>
 	</p>
 	<p>
 		EventLink mit @Component in der Klasse:
-		<a href="#" t:id="resetCounterLink">Zur&uuml;cksetzen</a>
+		<a href="#" t:id="resetCounterLink">${message:reset}</a>
 	</p>
 
 </html>

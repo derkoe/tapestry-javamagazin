@@ -2,6 +2,7 @@ package com.github.derkoe.javamagazin.pages;
 
 import java.util.Date;
 import org.apache.tapestry5.annotations.*;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.corelib.components.*;
 import org.apache.tapestry5.SymbolConstants;
@@ -31,6 +32,9 @@ public class Index
     @Inject
     private AlertManager alertManager;
 
+    @Inject
+    private Messages messages;
+
     public Date getCurrentTime()
     {
         return new Date();
@@ -43,7 +47,7 @@ public class Index
 
     Index onActionFromIncrement()
     {
-        alertManager.info("Zahl erhöht auf " + (++clickCount));
+        alertManager.info(messages.format("counter-increased", ++clickCount));
 
         return this;
     }
@@ -51,7 +55,7 @@ public class Index
     @OnEvent(component = "incrementAjax")
     Zone incAjax()
     {
-        alertManager.info("Zahl erhöht auf " + (++clickCount) + " (mit Ajax)");
+        alertManager.info(messages.format("counter-increased-ajax", ++clickCount));
 
         return zone;
     }
@@ -59,7 +63,7 @@ public class Index
     @OnEvent(EVENT_RESET_COUNTER)
     void setCounter(int value)
     {
-        alertManager.info("Zahl zurückgesetzt auf " + value);
+        alertManager.info(messages.format("counter-reset-to", value));
         
         clickCount = value;
     }
