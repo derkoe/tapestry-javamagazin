@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="net.sourceforge.eclipsejetty.launchConfigurationType">
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.context" value="/"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.path" value="D:\Programs\jetty-distribution-7.3.0.v20110203"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.version" value="7"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jsp.enabled" value="false"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.launcher.excludeLibs" value=".*servlet-api.*, .*selenium-server.*standalone\.jar"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.port" value="8080"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.webappdir" value="src/main/webapp"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="net.sourceforge.eclipsejetty.launcher.JettyWebAppClassPathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.sourceforge.eclipsejetty.launch.Jetty7LauncherMain"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="tapestry-javamagazin2"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dtapestry.execution-mode=development"/>
+</launchConfiguration>
