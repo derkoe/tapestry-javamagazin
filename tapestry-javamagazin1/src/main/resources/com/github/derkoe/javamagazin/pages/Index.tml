@@ -7,7 +7,7 @@
 
     <p>${message:greeting}</p>
 
-    <p>Aktuelle Zeit: <strong>${currentTime}</strong></p>
+    <p>${message:currentTime}: <strong>${currentTime}</strong></p>
 
     <!-- A Zone is a component that can be updated in place, triggered by other components. -->
     <t:zone t:id="zone">
@@ -23,15 +23,15 @@
     </t:zone>
 
 	<p>
-		EventLink mit direkter Verwendung des Komponentennames im Tapestry-Namespace:
+		${message:eventlink-in-template}:
 		<t:eventlink event="resetcounter" context="literal:1">${message:reset}</t:eventlink>
 	</p>
 	<p>
-		EventLink mit Invisible Instrumentation:
+		${message:eventlink-invisible-instrumentation}:
 		<a href="#" t:type="EventLink" event="resetcounter" context="literal:1">${message:reset}</a>
 	</p>
 	<p>
-		EventLink mit @Component in der Klasse:
+		${message:eventlink-component-in-class}:
 		<a href="#" t:id="resetCounterLink">${message:reset}</a>
 	</p>
 
