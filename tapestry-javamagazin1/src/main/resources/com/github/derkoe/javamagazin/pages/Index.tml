@@ -12,7 +12,7 @@
     <!-- A Zone is a component that can be updated in place, triggered by other components. -->
     <t:zone t:id="zone">
         <p>
-            Sie haben den Link <strong>${clickCount}</strong> mal geklickt.
+            <t:outputraw value="clickCountMessage" />
         </p>
 
         <p>
@@ -24,11 +24,11 @@
 
 	<p>
 		${message:eventlink-in-template}:
-		<t:eventlink event="resetcounter" context="literal:1">${message:reset}</t:eventlink>
+		<t:eventlink event="resetcounter" context="literal:0">${message:reset}</t:eventlink>
 	</p>
 	<p>
 		${message:eventlink-invisible-instrumentation}:
-		<a href="#" t:type="EventLink" event="resetcounter" context="literal:1">${message:reset}</a>
+		<a href="#" t:type="EventLink" event="resetcounter" context="literal:0">${message:reset}</a>
 	</p>
 	<p>
 		${message:eventlink-component-in-class}:

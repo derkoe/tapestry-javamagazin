@@ -15,7 +15,7 @@ public class Index
 {
     private static final String EVENT_RESET_COUNTER = "resetcounter";
 
-    @Component(parameters = {"event=" + EVENT_RESET_COUNTER, "context=literal:1"})
+    @Component(parameters = {"event=" + EVENT_RESET_COUNTER, "context=literal:0"})
     private EventLink resetCounterLink;
 
     @Inject
@@ -23,7 +23,6 @@ public class Index
     private String tapestryVersion;
 
     @Persist
-    @Property
     private int clickCount;
 
     @InjectComponent
@@ -43,6 +42,11 @@ public class Index
     public String getTapestryVersion()
     {
         return tapestryVersion;
+    }
+
+    public String getClickCountMessage()
+    {
+        return messages.format("clickCountMessage", clickCount);
     }
 
     Index onActionFromIncrement()
