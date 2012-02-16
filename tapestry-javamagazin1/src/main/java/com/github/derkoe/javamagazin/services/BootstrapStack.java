@@ -12,11 +12,18 @@ import org.apache.tapestry5.services.javascript.StylesheetLink;
 
 public class BootstrapStack implements JavaScriptStack
 {
-    private StylesheetLink bootstrapCss;
+    private StylesheetLink[] stylesheets;
 
     public BootstrapStack(final AssetSource assetSource)
     {
-        bootstrapCss = TapestryInternalUtils.assetToStylesheetLink.map(assetSource.getUnlocalizedAsset("/com/github/derkoe/javamagazin/bootstrap.css"));
+        stylesheets =
+            new StylesheetLink[]
+            {
+                TapestryInternalUtils.assetToStylesheetLink.map(assetSource
+                    .getUnlocalizedAsset("/com/github/derkoe/javamagazin/bootstrap.css")),
+                TapestryInternalUtils.assetToStylesheetLink.map(assetSource
+                    .getUnlocalizedAsset("/com/github/derkoe/javamagazin/bootstrap-responsive.css"))
+            };
     }
 
     public List<String> getStacks()
@@ -31,7 +38,7 @@ public class BootstrapStack implements JavaScriptStack
 
     public List<StylesheetLink> getStylesheets()
     {
-        return Arrays.asList(bootstrapCss);
+        return Arrays.asList(stylesheets);
     }
 
     public String getInitialization()

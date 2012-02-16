@@ -10,13 +10,14 @@ import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 
 /**
  * Layout component for pages of application tapestry-javamagazin1.
  */
-@Import(stack = "bootstrap")
+@Import(stack = "bootstrap", stylesheet = "layout.css")
 public class Layout
 {
     /**
@@ -30,12 +31,20 @@ public class Layout
     private String pageName;
 
     @Inject
+    private Messages messages;
+
+    @Inject
     private ComponentResources resources;
 
     @Property
     @Inject
     @Symbol(SymbolConstants.APPLICATION_VERSION)
     private String appVersion;
+
+    String defaultTitle()
+    {
+        return messages.get("pagetitle." + resources.getPageName());
+    }
 
     public String getClassForPageName()
     {
@@ -47,5 +56,10 @@ public class Layout
     public Collection<String> getPageNames()
     {
         return asList("Contact", "About");
+    }
+
+    public String getPageLabel()
+    {
+        return messages.get("pagetitle." + pageName);
     }
 }
