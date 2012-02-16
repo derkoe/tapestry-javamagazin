@@ -4,8 +4,8 @@ apply plugin: "war"
 apply plugin: "java"
 apply plugin: "jetty"
 
-sourceCompatibility = "1.5"
-targetCompatibility = "1.5"
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
 
 group = "com.github.derkoe.javamagazin1"
 version = "1.0-SNAPSHOT"
