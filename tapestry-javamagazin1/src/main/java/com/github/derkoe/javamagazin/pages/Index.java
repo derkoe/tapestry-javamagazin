@@ -15,6 +15,7 @@ public class Index
 {
     private static final String EVENT_RESET_COUNTER = "resetcounter";
 
+    @SuppressWarnings("unused")
     @Component(parameters = {"event=" + EVENT_RESET_COUNTER, "context=literal:0"})
     private EventLink resetCounterLink;
 
