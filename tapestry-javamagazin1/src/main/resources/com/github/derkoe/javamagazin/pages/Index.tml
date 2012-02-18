@@ -16,23 +16,23 @@
         </p>
 
         <p>
-            [ <a t:type="actionlink" t:id="increment">${message:increase}</a> ]
+            <a t:type="actionlink" t:id="increment" class="btn btn-primary">${message:increase}</a>
             &nbsp;
-            [ <a t:type="actionlink" t:id="incrementAjax" zone="^">${message:increase-ajax}</a> ]
+            <a t:type="actionlink" t:id="incrementAjax" zone="^" class="btn btn-info">${message:increase-ajax}</a>
         </p>
     </t:zone>
 
 	<p>
 		${message:eventlink-in-template}:
-		<t:eventlink event="resetcounter" context="literal:0">${message:reset}</t:eventlink>
+		<t:eventlink event="resetcounter" context="literal:0" class="btn btn-small btn-danger">${message:reset}</t:eventlink>
 	</p>
 	<p>
 		${message:eventlink-invisible-instrumentation}:
-		<a href="#" t:type="EventLink" event="resetcounter" context="literal:0">${message:reset}</a>
+		<a href="#" t:type="EventLink" event="resetcounter" context="literal:0" class="btn btn-small btn-danger">${message:reset}</a>
 	</p>
 	<p>
 		${message:eventlink-component-in-class}:
-		<a href="#" t:id="resetCounterLink">${message:reset}</a>
+		<a href="#" t:id="resetCounterLink" class="btn btn-small btn-danger">${message:reset}</a>
 	</p>
 
 </html>
