@@ -1,11 +1,12 @@
 package com.github.derkoe.javamagazin.pages.person;
 
-import static org.apache.tapestry5.EventConstants.*;
+import static org.apache.tapestry5.EventConstants.PREPARE;
+import static org.apache.tapestry5.EventConstants.SUBMIT;
 
 import javax.inject.Inject;
 
-import org.apache.tapestry5.annotations.ActivationRequestParameter;
 import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Property;
 
 import com.github.derkoe.javamagazin.services.person.Person;
@@ -19,7 +20,7 @@ public class PersonEdit
     @Property
     private Person person;
 
-    @ActivationRequestParameter
+    @PageActivationContext
     private String personId;
 
     @OnEvent(PREPARE)

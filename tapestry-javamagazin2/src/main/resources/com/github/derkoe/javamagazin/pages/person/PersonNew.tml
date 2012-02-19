@@ -3,9 +3,9 @@
       xmlns:p="tapestry:parameter">
 
 	<form t:type="form">
-		<div t:type="beaneditor" object="person">
-		</div>
+		<div t:type="beaneditor" object="person"/>
+
 		<input type="submit" t:type="submit" value="${message:btn.create}" class="btn btn-primary" />
-		<a href="PersonList.tml" t:type="pagelink" page="person/list">${message:btn.cancel}</a>
+		<a href="PersonList.tml" t:type="pagelink" page="person/list" class="btn">${message:btn.cancel}</a>
 	</form>
 </html>

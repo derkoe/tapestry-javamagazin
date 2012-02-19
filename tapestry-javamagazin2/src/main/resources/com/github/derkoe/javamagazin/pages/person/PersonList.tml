@@ -6,7 +6,7 @@
 		<a t:type="pagelink" page="person/new" href="#" class="btn btn-primary">${message:createNewPerson}</a>
 	</div>
 	<div>
-		<table t:type="grid" source="personList" add="edit" row="person">
+		<table t:type="grid" source="personList" exclude="id" add="edit" row="person">
 			<p:editCell>
 				<a t:type="pagelink" page="person/edit" context="person.id" href="#" class="btn btn-primary btn-small">${message:editPerson}</a>
 			</p:editCell>

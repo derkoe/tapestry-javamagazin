@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.tapestry5.func.Flow;
-
 public class PersonServiceImpl implements PersonService
 {
     private List<Person> personList = new ArrayList<Person>();
