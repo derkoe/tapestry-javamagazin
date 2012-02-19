@@ -10,10 +10,10 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a t:type="pagelink" page="index" class="brand">tapestry-javamagazin2</a>
+				<a t:type="pagelink" page="index" class="brand">${message:pagetitle.Index}</a>
 				<ul class="nav">
 					<li t:type="loop" source="pageNames" value="pageName" class="prop:classForPageName">
-						<a t:type="pagelink" page="prop:pageName">${pageName}</a>
+						<a t:type="pagelink" page="prop:pageName">${pageLabel}</a>
 					</li>
 				</ul>
 			</div>

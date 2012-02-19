@@ -21,7 +21,7 @@ public class Person
         this.dateOfBirth = dateOfBirth;
     }
 
-    Person(Person person)
+    public Person(Person person)
     {
         this.id = person.id;
         this.firstName = person.firstName;
@@ -29,7 +29,12 @@ public class Person
         this.dateOfBirth = new Date(person.dateOfBirth.getTime());
     }
 
-    void generateId()
+    public Person()
+    {
+        this(null, null, null);
+    }
+
+    public void generateId()
     {
         this.id = UUID.randomUUID().toString();
     }

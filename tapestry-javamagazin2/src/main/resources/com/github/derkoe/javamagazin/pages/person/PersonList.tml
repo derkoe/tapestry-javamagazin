@@ -1,5 +1,15 @@
-<html t:type="layout" title="Tapestry javamagazin Teil 1"
+<html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
-	<p>Hello World</p>
+
+	<div>
+		<a t:type="pagelink" page="person/new" href="#" class="btn btn-primary">${message:createNewPerson}</a>
+	</div>
+	<div>
+		<table t:type="grid" source="personList" add="edit" row="person">
+			<p:editCell>
+				<a t:type="pagelink" page="person/edit" context="person.id" href="#" class="btn btn-primary btn-small">${message:editPerson}</a>
+			</p:editCell>
+		</table>
+	</div>
 </html>

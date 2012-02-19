@@ -1,16 +1,16 @@
 package com.github.derkoe.javamagazin.pages.person;
 
-import java.util.Collection;
+import static org.apache.tapestry5.EventConstants.*;
 
 import javax.inject.Inject;
 
-import org.apache.tapestry5.annotations.Cached;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
 
 import com.github.derkoe.javamagazin.services.person.Person;
 import com.github.derkoe.javamagazin.services.person.PersonService;
 
-public class PersonList
+public class PersonNew
 {
     @Inject
     private PersonService personService;
@@ -18,9 +18,17 @@ public class PersonList
     @Property
     private Person person;
 
-    @Cached
-    public Collection<Person> getPersonList()
+    @OnEvent(PREPARE)
+    void createPersonInstance()
     {
-        return personService.list();
+        person = new Person();
+    }
+
+    @OnEvent(SUBMIT)
+    Object newPerson()
+    {
+        personService.newPerson(person);
+
+        return PersonList.class;
     }
 }

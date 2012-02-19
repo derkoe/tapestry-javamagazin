@@ -10,5 +10,7 @@ public interface PersonService
 
     boolean deletePerson(Person person);
 
-    Collection<Person> list(String sortField);
+    Collection<Person> list();
+
+    Person getById(String id);
 }
