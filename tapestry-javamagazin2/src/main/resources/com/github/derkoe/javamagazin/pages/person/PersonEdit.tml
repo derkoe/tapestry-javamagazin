@@ -2,7 +2,7 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
 
-	<form t:type="form">
+	<form t:type="form" validate="person">
 		<div t:type="beaneditor" object="person" />
 
 		<input type="submit" t:type="submit" value="${message:btn.save}" class="btn btn-primary" />

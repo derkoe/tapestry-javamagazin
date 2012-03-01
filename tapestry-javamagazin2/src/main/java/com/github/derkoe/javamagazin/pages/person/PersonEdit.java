@@ -4,6 +4,7 @@ import static org.apache.tapestry5.EventConstants.PREPARE;
 import static org.apache.tapestry5.EventConstants.SUBMIT;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.PageActivationContext;
@@ -17,6 +18,7 @@ public class PersonEdit
     @Inject
     private PersonService personService;
 
+    @Valid
     @Property
     private Person person;
 

@@ -3,14 +3,23 @@ package com.github.derkoe.javamagazin.services.person;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Person
 {
     private String id;
 
+    @NotNull
+    @NotEmpty
     private String firstName;
 
+    @NotNull
+    @NotEmpty
     private String lastName;
 
+    @NotNull
     private Date dateOfBirth;
 
     public Person(String firstName, String lastName, Date dateOfBirth)

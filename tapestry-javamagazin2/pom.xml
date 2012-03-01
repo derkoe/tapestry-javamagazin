@@ -26,6 +26,12 @@
 			<version>${tapestry-release-version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-beanvalidator</artifactId>
+			<version>${tapestry-release-version}</version>
+		</dependency>
+
 		<!-- Uncomment this to add support for file uploads:
 		<dependency>
 			<groupId>org.apache.tapestry</groupId>
