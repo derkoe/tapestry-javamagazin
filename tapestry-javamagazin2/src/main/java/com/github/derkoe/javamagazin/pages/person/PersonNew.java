@@ -1,7 +1,7 @@
 package com.github.derkoe.javamagazin.pages.person;
 
 import static org.apache.tapestry5.EventConstants.PREPARE;
-import static org.apache.tapestry5.EventConstants.SUBMIT;
+import static org.apache.tapestry5.EventConstants.SUCCESS;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -25,7 +25,7 @@ public class PersonNew
         person = new Person();
     }
 
-    @OnEvent(SUBMIT)
+    @OnEvent(SUCCESS)
     Object newPerson()
     {
         personService.newPerson(person);
