@@ -4,22 +4,23 @@ import java.util.Date;
 import java.util.UUID;
 
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 public class Person
 {
     private String id;
 
     @NotNull
-    @NotEmpty
+    @Size(max = 50)
     private String firstName;
 
     @NotNull
-    @NotEmpty
+    @Size(max = 50)
     private String lastName;
 
     @NotNull
+    @Past
     private Date dateOfBirth;
 
     public Person(String firstName, String lastName, Date dateOfBirth)

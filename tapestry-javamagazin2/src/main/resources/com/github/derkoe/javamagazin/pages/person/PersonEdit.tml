@@ -3,6 +3,7 @@
       xmlns:p="tapestry:parameter">
 
 	<form t:type="form" validate="person">
+		<div t:type="errors"></div>
 		<div t:type="beaneditor" object="person" />
 
 		<input type="submit" t:type="submit" value="${message:btn.save}" class="btn btn-primary" />
