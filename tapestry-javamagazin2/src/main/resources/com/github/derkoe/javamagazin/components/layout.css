@@ -1,4 +1,7 @@
 body {
-	padding-top: 60px;
-	position: relative;
+	margin-top: 60px;
+}
+
+.btn {
+	margin: 5px 2px;
 }
