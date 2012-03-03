@@ -46,6 +46,7 @@ public class AppModule
         // you can extend this list of locales (it's a comma separated series of locale names;
         // the first locale name is the default when there's no reasonable match).
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "de,en");
+        configuration.add(SymbolConstants.DEFAULT_STYLESHEET, "classpath:/com/github/derkoe/javamagazin/tapestry.css");
     }
 
     public static void contributeJavaScriptStackSource(MappedConfiguration<String, JavaScriptStack> configuration)
