@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.inject.Inject;
 
 import org.apache.tapestry5.annotations.Cached;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
 
 import com.github.derkoe.javamagazin.services.person.Person;
@@ -22,5 +23,11 @@ public class PersonList
     public Collection<Person> getPersonList()
     {
         return personService.list();
+    }
+
+    @OnEvent("delete")
+    void deletePerson(String id)
+    {
+        personService.deleteById(id);
     }
 }

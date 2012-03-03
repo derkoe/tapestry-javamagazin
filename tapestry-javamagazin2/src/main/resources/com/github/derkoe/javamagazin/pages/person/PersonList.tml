@@ -2,14 +2,19 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
 
-	<div>
+	<section id="buttons">
 		<a t:type="pagelink" page="person/new" href="#" class="btn btn-primary">${message:createNewPerson}</a>
-	</div>
-	<div>
+	</section>
+
+	<section id="personList">
 		<table t:type="grid" source="personList" exclude="id" add="edit" row="person">
 			<p:editCell>
 				<a t:type="pagelink" page="person/edit" context="person.id" href="#" class="btn btn-primary btn-small">${message:editPerson}</a>
+				<a t:type="eventlink" event="delete" context="person.id" href="#" class="btn btn-small">${message:deletePerson}</a>
 			</p:editCell>
+			<p:empty>
+				<p>${message:noPersonCreated}</p>
+			</p:empty>
 		</table>
-	</div>
+	</section>
 </html>

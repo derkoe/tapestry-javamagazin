@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 public class PersonServiceImpl implements PersonService
 {
@@ -37,11 +38,6 @@ public class PersonServiceImpl implements PersonService
         throw new ArrayIndexOutOfBoundsException("Person not found in list");
     }
 
-    public boolean deletePerson(Person person)
-    {
-        return personList.remove(person);
-    }
-
     public Collection<Person> list()
     {
         return Collections.unmodifiableList(personList);
@@ -58,4 +54,21 @@ public class PersonServiceImpl implements PersonService
         }
         return null;
     }
+
+    public boolean deleteById(String id)
+    {
+        ListIterator<Person> listIterator = personList.listIterator();
+        while(listIterator.hasNext())
+        {
+            Person person = listIterator.next();
+            if(id.equals(person.getId()))
+            {
+                listIterator.remove();
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }

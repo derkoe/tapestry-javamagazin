@@ -8,9 +8,9 @@ public interface PersonService
 
     Person changePerson(Person person);
 
-    boolean deletePerson(Person person);
-
     Collection<Person> list();
 
     Person getById(String id);
+
+    boolean deleteById(String id);
 }
