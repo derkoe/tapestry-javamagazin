@@ -16,6 +16,7 @@ public class PersonList
     @Inject
     private PersonService personService;
 
+    @SuppressWarnings("unused")
     @Property
     private Person person;
 
