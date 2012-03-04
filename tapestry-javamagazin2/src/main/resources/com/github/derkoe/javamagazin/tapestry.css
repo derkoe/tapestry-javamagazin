@@ -18,6 +18,12 @@ IMG.t-calendar-trigger {
     cursor: pointer;
 }
 
+.t-data-grid thead tr th img {
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+
 /***********************************/
 /* Exception page                  */
 
