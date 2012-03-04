@@ -78,7 +78,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>tapestry-javamagazin1</finalName>
+		<finalName>tapestry-javamagazin2</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
