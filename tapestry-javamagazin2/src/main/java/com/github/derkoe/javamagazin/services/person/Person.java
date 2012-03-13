@@ -12,6 +12,9 @@ public class Person
     private String id;
 
     @NotNull
+    private Gender gender;
+
+    @NotNull
     @Size(max = 50)
     private String firstName;
 
@@ -23,9 +26,10 @@ public class Person
     @Past
     private Date dateOfBirth;
 
-    public Person(String firstName, String lastName, Date dateOfBirth)
+    public Person(Gender gender, String firstName, String lastName, Date dateOfBirth)
     {
         super();
+        this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -34,6 +38,7 @@ public class Person
     public Person(Person person)
     {
         this.id = person.id;
+        this.gender = person.gender;
         this.firstName = person.firstName;
         this.lastName = person.lastName;
         this.dateOfBirth = new Date(person.dateOfBirth.getTime());
@@ -41,7 +46,7 @@ public class Person
 
     public Person()
     {
-        this(null, null, null);
+        super();
     }
 
     public void generateId()
@@ -52,6 +57,16 @@ public class Person
     public String getId()
     {
         return id;
+    }
+
+    public Gender getGender()
+    {
+        return gender;
+    }
+
+    public void setGender(Gender gender)
+    {
+        this.gender = gender;
     }
 
     public String getFirstName()
