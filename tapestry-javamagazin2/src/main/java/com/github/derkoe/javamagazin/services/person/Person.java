@@ -11,7 +11,6 @@ public class Person
 {
     private String id;
 
-    @NotNull
     private Gender gender;
 
     @NotNull
@@ -26,6 +25,7 @@ public class Person
     @Past
     private Date dateOfBirth;
 
+    @NotNull
     private Country country;
 
     public Person(Person person)
