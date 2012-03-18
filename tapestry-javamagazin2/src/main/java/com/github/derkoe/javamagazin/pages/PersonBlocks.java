@@ -1,19 +1,18 @@
 package com.github.derkoe.javamagazin.pages;
 
-import java.util.Collection;
+import static com.github.derkoe.javamagazin.services.person.CountrySelectHelpers.selectModel;
+import static com.github.derkoe.javamagazin.services.person.CountrySelectHelpers.valueEncoder;
+
 import java.util.Locale;
 
 import javax.inject.Inject;
 
 import org.apache.tapestry5.FieldValidator;
-import org.apache.tapestry5.OptionModel;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Environmental;
 import org.apache.tapestry5.corelib.components.Select;
-import org.apache.tapestry5.internal.OptionModelImpl;
-import org.apache.tapestry5.internal.SelectModelImpl;
 import org.apache.tapestry5.services.PropertyEditContext;
 import org.apache.tapestry5.services.PropertyOutputContext;
 
@@ -45,38 +44,19 @@ public class PersonBlocks
         return editContext;
     }
 
-    public FieldValidator getCountrySelectValidator()
+    public FieldValidator<?> getCountrySelectValidator()
     {
         return editContext.getValidator(countrySelect);
     }
 
     public SelectModel getCountrySelectModel()
     {
-        Collection<Country> countries = countryService.list();
-        OptionModel[] optionModels = new OptionModel[countries.size()];
-        int i = 0;
-        for (Country country : countries)
-        {
-            optionModels[i++] = new OptionModelImpl(country.getName(locale), country);
-        }
-
-        return new SelectModelImpl(optionModels);
+        return selectModel(countryService.list(), locale);
     }
 
     public ValueEncoder<Country> getCountryEncoder()
     {
-        return new ValueEncoder<Country>()
-        {
-            public Country toValue(String clientValue)
-            {
-                return clientValue == null ? null : new Country(clientValue);
-            }
-
-            public String toClient(Country value)
-            {
-                return value == null ? "" : value.isoCode;
-            }
-        };
+        return valueEncoder();
     }
 
     public String getCountryName()
