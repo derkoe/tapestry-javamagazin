@@ -1,4 +1,4 @@
-﻿package com.github.derkoe.javamagazin.pages;
+package com.github.derkoe.javamagazin.pages;
 
 import java.util.Collection;
 import java.util.Locale;
