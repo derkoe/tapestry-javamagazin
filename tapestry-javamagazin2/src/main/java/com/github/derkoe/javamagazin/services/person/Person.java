@@ -26,14 +26,7 @@ public class Person
     @Past
     private Date dateOfBirth;
 
-    public Person(Gender gender, String firstName, String lastName, Date dateOfBirth)
-    {
-        super();
-        this.gender = gender;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-    }
+    private Country country;
 
     public Person(Person person)
     {
@@ -42,6 +35,7 @@ public class Person
         this.firstName = person.firstName;
         this.lastName = person.lastName;
         this.dateOfBirth = new Date(person.dateOfBirth.getTime());
+        this.country = person.country;
     }
 
     public Person()
@@ -97,6 +91,16 @@ public class Person
     public void setDateOfBirth(Date dateOfBirth)
     {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Country getCountry()
+    {
+        return country;
+    }
+
+    public void setCountry(Country country)
+    {
+        this.country = country;
     }
 
     @Override
