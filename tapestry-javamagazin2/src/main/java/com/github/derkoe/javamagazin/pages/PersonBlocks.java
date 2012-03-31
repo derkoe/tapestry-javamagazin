@@ -10,8 +10,8 @@ import javax.inject.Inject;
 import org.apache.tapestry5.FieldValidator;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.ValueEncoder;
-import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Environmental;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.corelib.components.Select;
 import org.apache.tapestry5.services.PropertyEditContext;
 import org.apache.tapestry5.services.PropertyOutputContext;
@@ -33,10 +33,7 @@ public class PersonBlocks
     @Environmental
     private PropertyEditContext editContext;
 
-    @Component(
-        parameters = {"value=editContext.propertyValue", "label=prop:editContext.label",
-            "model=countrySelectModel", "encoder=prop:countryEncoder", "validate=prop:countrySelectValidator",
-            "clientId=prop:editContext.propertyId"})
+    @InjectComponent
     private Select countrySelect;
 
     public PropertyEditContext getEditContext()

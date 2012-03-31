@@ -2,8 +2,10 @@
 	xmlns:p="tapestry:parameter">
 
     <t:block id="editCountry">
-        <t:label for="countrySelect"/>
-        <input t:id="countrySelect"/>
+        <label t:type="label" for="countrySelect"/>
+        <select t:type="select" t:id="countrySelect" value="editContext.propertyValue"
+        	label="prop:editContext.label" model="countrySelectModel" encoder="prop:countryEncoder"
+        	validate="prop:countrySelectValidator" clientId="prop:editContext.propertyId" />
     </t:block>
 
 	<t:block id="displayCountry">
