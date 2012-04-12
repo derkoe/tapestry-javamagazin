@@ -1,0 +1,20 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tapestry-javamagazin3-app</artifactId>
+	<packaging>jar</packaging>
+	<name>tapestry-javamagazin3 Parent</name>
+	<parent>
+		<groupId>com.github.derkoe.javamagazin</groupId>
+		<artifactId>tapestry-javamagazin3</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>${project.parent.groupId}</groupId>
+			<artifactId>tapestry-javamagazin3-person</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,8 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<section id="personNew">
+		<form t:type="person/PersonEditor" person="person">
+		</form>
+	</section>
+</html>
