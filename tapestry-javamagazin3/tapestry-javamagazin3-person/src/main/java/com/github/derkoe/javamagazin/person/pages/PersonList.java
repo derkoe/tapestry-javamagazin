@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.inject.Inject;
 
+import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Cached;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
@@ -20,6 +21,9 @@ public class PersonList
     @Property
     private Person person;
 
+    @Inject
+    private Block newPersonBlock;
+
     @Cached
     public Collection<Person> getPersonList()
     {
@@ -30,5 +34,11 @@ public class PersonList
     void deletePerson(String id)
     {
         personService.deleteById(id);
+    }
+
+    @OnEvent("new")
+    Block newPerson()
+    {
+        return newPersonBlock;
     }
 }

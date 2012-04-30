@@ -2,7 +2,7 @@
 	xmlns:p="tapestry:parameter">
 
 	<section id="personNew">
-		<form t:type="person/PersonEditor" person="person">
+		<form t:type="person/PersonEditor">
 		</form>
 	</section>
 </html>

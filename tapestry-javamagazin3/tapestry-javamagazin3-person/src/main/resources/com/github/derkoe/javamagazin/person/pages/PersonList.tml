@@ -3,7 +3,14 @@
       xmlns:p="tapestry:parameter">
 
 	<section id="buttons">
-		<a t:type="pagelink" page="person/new" href="#" class="btn btn-primary">${message:createNewPerson}</a>
+		<a t:type="pagelink" page="person/new" href="#" class="btn btn-primary">${message:createNewPersonPage}</a>
+		<a t:type="eventlink" event="new" href="#" class="btn btn-primary" zone="newPersonZone">${message:createNewPersonInline}</a>
+	</section>
+
+	<section id="personNew">
+		<t:zone id="newPersonZone">
+			<t:block id="newPersonBlock"><form t:type="person/PersonEditor" person="person"/></t:block>
+		</t:zone>
 	</section>
 
 	<section id="personList">
