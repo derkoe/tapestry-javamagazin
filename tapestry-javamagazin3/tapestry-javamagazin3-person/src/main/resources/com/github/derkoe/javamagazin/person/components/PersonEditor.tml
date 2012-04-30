@@ -1,12 +1,14 @@
-<form t:type="form" validate="person"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
-	<div t:type="errors"></div>
-
-	<div t:type="beaneditor" object="person" />
-
-	<div class="form-actions">
-		<input type="submit" t:type="submit" value="${message:btn.save}"
-			class="btn btn-primary" />
-		<a href="PersonList.tml" t:type="pagelink" page="person/list" class="btn">${message:btn.cancel}</a>
-	</div>
-</form>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<t:if test="header"><h2>${header}</h2></t:if>
+	<form t:type="form" validate="person">
+		<div t:type="errors"></div>
+	
+		<div t:type="beaneditor" object="person" />
+	
+		<div class="form-actions">
+			<input type="submit" t:type="submit" value="${message:btn.save}"
+				class="btn btn-primary" />
+			<a href="PersonList.tml" t:type="pagelink" page="person/list" class="btn">${message:btn.cancel}</a>
+		</div>
+	</form>
+</t:container>

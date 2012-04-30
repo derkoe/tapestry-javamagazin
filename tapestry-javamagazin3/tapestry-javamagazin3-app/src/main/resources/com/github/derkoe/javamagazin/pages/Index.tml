@@ -2,6 +2,11 @@
 	xmlns:p="tapestry:parameter">
 	<section id="intro">
 		<p>${message:intro-text}</p>
-		<p>${message:start-text-1} <a href="#" t:type="pagelink" page="person/list">${message:start-text-2}</a> ${message:start-text-3} <a href="#" t:type="pagelink" page="person/new">${message:start-text-4}</a>${message:start-text-5}</p>
+		<p>${message:start-text-1} <a href="#" t:type="pagelink" page="person/list">${message:start-text-2}</a> ${message:start-text-3} <a t:type="eventlink" event="new" href="#" zone="newPersonZone">${message:start-text-4}</a>${message:start-text-5}</p>
 	</section>
+	<section id="personNew">
+		<t:zone id="newPersonZone">
+			<t:block id="newPersonBlock"><form t:type="person/PersonEditor" person="person" header="message:pagetitle.person/New"/></t:block>
+		</t:zone>
+	</section>	
 </html>
