@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="net.sourceforge.eclipsejetty.launchConfigurationType">
 <stringAttribute key="net.sourceforge.eclipsejetty.launcher.context" value="/"/>
-<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.path" value="D:\Programs\jetty-distribution-7.3.0.v20110203"/>
-<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.version" value="7"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.path" value="${jetty_home}"/>
+<stringAttribute key="net.sourceforge.eclipsejetty.launcher.jetty.version" value="auto"/>
 <stringAttribute key="net.sourceforge.eclipsejetty.launcher.jsp.enabled" value="false"/>
 <stringAttribute key="net.sourceforge.eclipsejetty.launcher.launcher.excludeLibs" value=".*servlet-api.*, .*selenium-server.*standalone\.jar"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.launcher.info" value="true"/>
 <stringAttribute key="net.sourceforge.eclipsejetty.launcher.port" value="8082"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.scope.compile.exclude" value="false"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.scope.provided.exclude" value="true"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.scope.runtime.exclude" value="false"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.scope.system.exclude" value="true"/>
+<booleanAttribute key="net.sourceforge.eclipsejetty.launcher.scope.test.exclude" value="true"/>
 <stringAttribute key="net.sourceforge.eclipsejetty.launcher.webappdir" value="src/main/webapp"/>
-<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="net.sourceforge.eclipsejetty.launcher.JettyWebAppClassPathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.sourceforge.eclipsejetty.launch.Jetty7LauncherMain"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="net.sourceforge.eclipsejetty.launcher.JettyLaunchClassPathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.sourceforge.eclipsejetty.jetty6.Jetty6LauncherMain"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="tapestry-javamagazin2"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dtapestry.execution-mode=development"/>
 </launchConfiguration>
