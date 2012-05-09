@@ -1,5 +1,7 @@
 package com.github.derkoe.javamagazin.person;
 
+import java.util.Date;
+
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
@@ -27,6 +29,7 @@ public class PersonModule
     public static void contributeDefaultDataTypeAnalyzer(MappedConfiguration<Class, String> configuration)
     {
         configuration.add(Country.class, "country");
+        configuration.override(Date.class, "jmdate");
     }
 
     @Contribute(BeanBlockSource.class)
@@ -34,6 +37,9 @@ public class PersonModule
     {
         configuration.add(new EditBlockContribution("country", "person/PersonBlocks", "editCountry"));
         configuration.add(new DisplayBlockContribution("country", "person/PersonBlocks", "displayCountry"));
+
+        configuration.add(new EditBlockContribution("jmdate", "person/PersonBlocks", "editDate"));
+        configuration.add(new DisplayBlockContribution("jmdate", "PropertyDisplayBlocks", "date"));
     }
 
     @Contribute(ComponentClassResolver.class)

@@ -3,10 +3,12 @@ package com.github.derkoe.javamagazin.person.pages;
 import static com.github.derkoe.javamagazin.person.services.CountrySelectHelpers.selectModel;
 import static com.github.derkoe.javamagazin.person.services.CountrySelectHelpers.valueEncoder;
 
+import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
 
+import org.apache.tapestry5.FieldTranslator;
 import org.apache.tapestry5.FieldValidator;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.ValueEncoder;
@@ -16,6 +18,7 @@ import org.apache.tapestry5.corelib.components.Select;
 import org.apache.tapestry5.services.PropertyEditContext;
 import org.apache.tapestry5.services.PropertyOutputContext;
 
+import com.github.derkoe.javamagazin.person.components.DatePicker;
 import com.github.derkoe.javamagazin.person.services.Country;
 import com.github.derkoe.javamagazin.person.services.CountryService;
 
@@ -35,6 +38,9 @@ public class PersonBlocks
 
     @InjectComponent
     private Select countrySelect;
+
+    @InjectComponent
+    private DatePicker dateField;
 
     public PropertyEditContext getEditContext()
     {
@@ -60,5 +66,15 @@ public class PersonBlocks
     {
         Country country = (Country) outputContext.getPropertyValue();
         return country.getName(locale);
+    }
+    
+    public FieldValidator<?> getDateFieldValidator()
+    {
+        return editContext.getValidator(dateField);
+    }
+
+    public FieldTranslator<Date> getDateTranslator()
+    {
+        return dateField.getDefaultTranslate();
     }
 }
