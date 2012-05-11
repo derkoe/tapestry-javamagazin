@@ -17,10 +17,18 @@ public class PersonEditor
 {
     @Parameter
     private String personId;
-
+    
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     @Property(write = false)
     private String header;
+
+    /**
+     * Binding the zone parameter will cause the form submission to be handled
+     * as an Ajax request that updates the
+     * indicated zone. Often a Form will update the same zone that contains it.
+     */
+    @Parameter(defaultPrefix = BindingConstants.LITERAL)
+    private String zone;
 
     private Person person;
 

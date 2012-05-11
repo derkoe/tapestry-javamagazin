@@ -1,5 +1,7 @@
 package com.github.derkoe.javamagazin.person.pages;
 
+import static org.apache.tapestry5.EventConstants.FAILURE;
+
 import java.util.Collection;
 
 import javax.inject.Inject;
@@ -38,6 +40,12 @@ public class PersonList
 
     @OnEvent("new")
     Block newPerson()
+    {
+        return newPersonBlock;
+    }
+
+    @OnEvent(FAILURE)
+    Block newPersonFailure()
     {
         return newPersonBlock;
     }

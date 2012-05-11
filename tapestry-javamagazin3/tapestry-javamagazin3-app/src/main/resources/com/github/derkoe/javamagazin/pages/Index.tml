@@ -7,7 +7,7 @@
 	<section id="personNew">
 		<t:zone id="newPersonZone">
 			<t:block id="newPersonBlock">
-				<form t:type="person/PersonEditor" person="person" header="message:pagetitle.person/New"/>
+				<form t:type="person/PersonEditor" person="person" header="message:pagetitle.person/New" zone="newPersonZone"/>
 			</t:block>
 		</t:zone>
 	</section>

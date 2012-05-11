@@ -1,6 +1,7 @@
 package com.github.derkoe.javamagazin.pages;
 
 import static org.apache.tapestry5.EventConstants.SUCCESS;
+import static org.apache.tapestry5.EventConstants.FAILURE;
 
 import javax.inject.Inject;
 
@@ -27,5 +28,11 @@ public class Index
     Class<PersonList> newPersonCreated()
     {
         return PersonList.class;
+    }
+
+    @OnEvent(FAILURE)
+    Block newPersonFailure()
+    {
+        return newPersonBlock;
     }
 }

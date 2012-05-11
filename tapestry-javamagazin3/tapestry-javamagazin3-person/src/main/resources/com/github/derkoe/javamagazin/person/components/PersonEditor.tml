@@ -1,6 +1,6 @@
 <t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
 	<t:if test="header"><h2>${header}</h2></t:if>
-	<form t:type="form" validate="person">
+	<form t:type="form" validate="person" zone="inherit:zone">
 		<div t:type="errors"></div>
 	
 		<div t:type="beaneditor" object="person" />
