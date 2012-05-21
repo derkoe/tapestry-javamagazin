@@ -1,0 +1,10 @@
+<suite name="Person Tests Suite" annotations="1.5">
+	<test name="Integration Tests" enabled="true">
+		<parameter name="tapestry.port" value="9091" />
+		<parameter name="tapestry.web-app-folder" value="src/test/webapp" />
+
+		<classes>
+			<class name="com.github.derkoe.javamagazin.person.PersonIntegrationTest"/>
+		</classes>
+	</test>
+</suite>

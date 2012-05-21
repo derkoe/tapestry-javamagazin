@@ -1,0 +1,15 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<head>
+		<title>PersonEditorTestPage</title>
+	</head>
+	<body>
+		<h1>PersonEditorTestPage</h1>
+		<section id="personEditor">
+			<form t:type="person/PersonEditor">
+			</form>
+		</section>
+		<section id="personList">
+			<table t:type="grid" source="personList"></table>
+		</section>
+	</body>
+</html>

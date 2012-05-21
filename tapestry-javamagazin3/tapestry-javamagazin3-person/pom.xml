@@ -10,4 +10,17 @@
 		<artifactId>tapestry-javamagazin3</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<suiteXmlFiles><suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile></suiteXmlFiles>
+					<systemPropertyVariables>
+						<tapestry.execution-mode>Qa</tapestry.execution-mode>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
