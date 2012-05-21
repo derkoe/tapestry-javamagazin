@@ -11,7 +11,7 @@ public class Counter
     private int value;
 
     @OnEvent("inc")
-    void increse()
+    void increase()
     {
         value++;
     }
