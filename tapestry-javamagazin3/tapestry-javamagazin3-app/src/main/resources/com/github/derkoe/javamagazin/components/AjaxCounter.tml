@@ -1,0 +1,6 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+  Meine AjaxCounter-Komponente:
+  <div t:type="zone" t:id="counterZone">
+    Aktueller Wert: <b>${value}</b>&nbsp;<a href="#" t:type="eventlink" event="inc" zone="^">Erh&ouml;hen</a>
+  </div>
+</t:container>

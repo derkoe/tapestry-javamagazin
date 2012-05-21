@@ -11,4 +11,10 @@
 			</t:block>
 		</t:zone>
 	</section>
+	<section id="counter">
+		<t:counter value="counter" />
+	</section>
+	<section id="ajaxCounter">
+		<t:ajaxcounter value="counter" />
+	</section>
 </html>

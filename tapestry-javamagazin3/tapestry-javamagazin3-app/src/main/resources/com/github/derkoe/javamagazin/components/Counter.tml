@@ -1,0 +1,6 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+	Meine Counter-Komponente:
+  	<div>
+		Aktueller Wert: <b>${value}</b>&nbsp;<a href="#" t:type="eventlink" event="inc">Erh&ouml;hen</a>
+	</div>
+</t:container>

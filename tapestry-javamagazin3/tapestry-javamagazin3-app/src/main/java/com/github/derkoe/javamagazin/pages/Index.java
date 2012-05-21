@@ -7,6 +7,8 @@ import javax.inject.Inject;
 
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.Persist;
+import org.apache.tapestry5.annotations.Property;
 
 import com.github.derkoe.javamagazin.person.pages.PersonList;
 
@@ -17,6 +19,10 @@ public class Index
 {
     @Inject
     private Block newPersonBlock;
+
+    @Property
+    @Persist
+    private int counter;
 
     @OnEvent("new")
     Block newPerson()
