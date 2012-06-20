@@ -2,7 +2,7 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
 
-	<section id="personNew">
+	<section id="personEdit">
 		<form t:type="person/PersonEditor" personId="personId">
 		</form>
 	</section>
