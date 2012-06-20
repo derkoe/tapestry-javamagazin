@@ -1,0 +1,15 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+    <t:block id="editCountry">
+        <label t:type="label" for="countrySelect"/>
+        <select t:type="select" t:id="countrySelect" value="editContext.propertyValue"
+        	label="prop:editContext.label" model="countrySelectModel" encoder="prop:countryEncoder"
+        	validate="prop:countrySelectValidator" clientId="prop:editContext.propertyId" />
+    </t:block>
+
+	<t:block id="displayCountry">
+		${countryName}
+	</t:block>
+
+</t:container>

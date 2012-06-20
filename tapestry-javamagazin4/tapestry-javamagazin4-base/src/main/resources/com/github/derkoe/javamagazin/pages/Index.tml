@@ -1,0 +1,7 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<section id="intro">
+		<p>${message:intro-text}</p>
+		<p>${message:start-text-1} <a href="#" t:type="pagelink" page="person/list">${message:start-text-2}</a> ${message:start-text-3} <a href="#" t:type="pagelink" page="person/new">${message:start-text-4}</a>${message:start-text-5}</p>
+	</section>
+</html>
